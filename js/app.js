@@ -609,7 +609,11 @@ function renderNewReview(review) {
     
     let starsHtml = '';
     for(let i=0; i<5; i++) {
-        starsHtml += i < review.rating ? '★' : '☆';
+        if (i < review.rating) {
+            starsHtml += `<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>`;
+        } else {
+            starsHtml += `<span class="material-symbols-outlined text-outline-variant" style="font-variation-settings: 'FILL' 0; font-size: 16px;">star</span>`;
+        }
     }
     
     const reviewCard = document.createElement('div');
@@ -618,19 +622,19 @@ function renderNewReview(review) {
     // Get first letter of name for the avatar
     const firstLetter = review.name ? review.name.charAt(0).toUpperCase() : 'U';
     
-    // Pick a random background color class for the avatar to make them look distinct
-    const colors = ['bg-primary-container text-on-primary-container', 'bg-secondary-container text-on-secondary-container', 'bg-tertiary-container text-on-tertiary-container', 'bg-surface-container-high text-on-surface'];
+    // Use the exact same background colors as the dummy reviews to ensure Tailwind catches them
+    const colors = ['bg-surface-container-high', 'bg-[#F2E0DA]', 'bg-[#E2D8C9]', 'bg-primary/10'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     
     reviewCard.innerHTML = `
         <span class="material-symbols-outlined text-surface-container-highest absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-        <div class="flex gap-1 mb-3 text-primary relative z-10">${starsHtml}</div>
+        <div class="flex gap-1 mb-3 relative z-10">${starsHtml}</div>
         <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"${review.text}"</p>
         <div class="flex items-center gap-3 relative z-10">
-            <div class="w-10 h-10 rounded-full ${randomColor} flex items-center justify-center font-headline-sm border border-outline-variant">${firstLetter}</div>
+            <div class="w-10 h-10 rounded-full ${randomColor} flex items-center justify-center text-on-surface font-headline-sm border border-outline-variant">${firstLetter}</div>
             <div>
                 <h4 class="font-label-md text-on-surface">${review.name}</h4>
-                <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer <span class="ml-1 opacity-50">${review.date}</span></p>
+                <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer <span class="opacity-50 ml-1">${review.date}</span></p>
             </div>
         </div>
     `;
