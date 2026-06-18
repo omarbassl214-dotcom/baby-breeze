@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Baby Breeze - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#C9C3BB",
+                        "secondary": "#8A7060",
+                        "on-secondary-fixed": "#261813",
+                        "on-secondary-container": "#3D332A",
+                        "surface-bright": "#F5F0E6",
+                        "primary-container": "#E8D9CC",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#E2DAD0",
+                        "inverse-surface": "#3D332A",
+                        "inverse-on-surface": "#F5F0E6",
+                        "on-primary": "#F5F0E6",
+                        "surface-container-lowest": "#FDFAF5",
+                        "surface-dim": "#D9D0C4",
+                        "tertiary": "#A8B59E",
+                        "tertiary-fixed": "#D6E4CF",
+                        "on-tertiary-container": "#3D4F38",
+                        "on-secondary-fixed-variant": "#6B5548",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#E8D9CC",
+                        "on-primary-container": "#3D332A",
+                        "inverse-primary": "#D9B8AC",
+                        "surface": "#F5F0E6",
+                        "on-surface": "#3D332A",
+                        "outline": "#9A8E84",
+                        "on-surface-variant": "#6B5D52",
+                        "secondary-container": "#EDE0D4",
+                        "secondary-fixed": "#EDE0D4",
+                        "secondary-fixed-dim": "#D9C8BB",
+                        "primary": "#C08552",
+                        "primary-fixed-dim": "#D9B8AC",
+                        "on-primary-fixed-variant": "#6B4C2A",
+                        "on-primary-fixed": "#2A1A08",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#EAE3D8",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#E2DAD0",
+                        "on-secondary": "#F5F0E6",
+                        "tertiary-container": "#A8B59E",
+                        "surface-container": "#EDE6DA",
+                        "surface-container-low": "#F2EDE3",
+                        "on-tertiary": "#ffffff",
+                        "background": "#EAE0CC",
+                        "tertiary-fixed-dim": "#8FA885",
+                        "on-tertiary-fixed": "#1A2B17",
+                        "on-tertiary-fixed-variant": "#3D4F38",
+                        "surface-tint": "#C08552",
+                        "on-background": "#3D332A"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "display-lg-mobile": ["Quicksand"],
+                        "label-md": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "label-sm": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md pb-24 md:pb-0">
+<!-- Top Dynamic Island -->
+<header id="dynamic-island" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-surface-bright/90 backdrop-blur-md rounded-full shadow-md border border-outline-variant/30 flex items-center gap-4 md:gap-6 px-4 md:px-6 py-2 md:py-3 transition-all duration-300 max-w-[95%] w-max">
+    <!-- Logo & Brand -->
+    <div class="flex items-center gap-3">
+        <img alt="Baby Breeze Logo" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWEgxk5VIeVHK0MilQw5I_H6z4Y8R7GH1eXfUvEdmzTYdH-ZuZTWgPMUy8kJgMJnXwqOHhC7pVT217GWc5CbtuBaDDvYFBOsfu1C1Ei2a_cM_AHsnmCQwYHFeunECcSBJnwD4dx0tWhiPTv_7ODozcIs_pCD456UqhzTGgnLZjj5mPNdRORx03OsD5UQEv8XCfFn-I9DMK_PKRrTD4VSE8AIE0xfK_UxiwRDQOJ2c5-uIdwdpUIFC9Mm_103DtvxGsVHlpDyUE0ARY"/>
+        <a href="javascript:void(0)" onclick="navigateTo('view-home'); window.scrollTo({top:0, behavior:'smooth'});" class="shrink-0"><h1 class="font-display-md text-primary tracking-tight" style="font-size: 1.25rem; line-height: 1;">Baby Breeze</h1></a>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-6 border-l border-outline-variant/30 pl-6 ml-2">
+        <a href="javascript:void(0)" onclick="navigateTo('view-home'); window.scrollTo({top:0, behavior:'smooth'});" class="font-body-md text-on-surface hover:text-primary transition-colors">Home</a>
+        <a href="javascript:void(0)" onclick="navigateTo('view-shop')" class="font-body-md text-on-surface hover:text-primary transition-colors">Shop</a>
+        <a href="javascript:void(0)" onclick="navigateTo('view-home'); setTimeout(() => document.getElementById('why-us-section').scrollIntoView({behavior:'smooth'}), 50);" class="font-body-md text-on-surface hover:text-primary transition-colors whitespace-nowrap">Why Us</a>
+        <a href="javascript:void(0)" onclick="navigateTo('view-home'); setTimeout(() => document.getElementById('reviews-section').scrollIntoView({behavior:'smooth'}), 50);" class="font-body-md text-on-surface hover:text-primary transition-colors">Reviews</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="hidden md:flex items-center relative ml-2">
+        <span class="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none" style="font-size: 18px; font-variation-settings: 'FILL' 0;">search</span>
+        <input type="text" id="desktop-search-input" oninput="performSearch(this.value)" placeholder="Search..." class="bg-surface-container-low border border-[#F2E0DA] rounded-full py-1.5 pl-9 pr-4 text-sm font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 w-48 transition-all focus:w-64 placeholder:text-on-surface-variant/70">
+    </div>
+</header>
+
+<!-- Floating Back Button (Top Left) -->
+<button id="ui-back-btn" aria-label="Back" class="hidden fixed top-4 left-4 z-50 bg-surface-bright/90 backdrop-blur-md shadow-md border border-outline-variant/30 rounded-full text-on-surface-variant hover:scale-105 transition-transform duration-200 focus:outline-none p-2.5 flex items-center justify-center" onclick="goBack()">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 20px;">arrow_back</span>
+</button>
+
+<!-- Floating Cart Button (Top Right) -->
+<button aria-label="Cart" onclick="toggleCart()" class="fixed top-4 right-4 z-50 bg-surface-bright/90 backdrop-blur-md shadow-md border border-outline-variant/30 rounded-full text-on-surface-variant hover:scale-105 transition-transform duration-200 focus:outline-none p-2.5 flex items-center justify-center">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 20px;">shopping_basket</span>
+</button>
+
+<!-- Main Content -->
+<!-- Main Content -->
+<main id="view-home" class="pt-xl mt-4 px-4 md:px-gutter max-w-container-max mx-auto">
+
+<!-- Hero Section -->
+<section id="hero-section" class="mb-lg rounded-2xl overflow-hidden relative min-h-[340px] flex items-center" style="background-color:#EDE6D8;">
+  <!-- Lifestyle image -->
+  <img
+    alt="Montessori baby flatlay with wooden toys, knit booties, and a sage muslin blanket on warm linen."
+    class="absolute inset-0 w-full h-full object-cover"
+    style="opacity:0.5;"
+    src="images/montessori_hero.png"
+  />
+  <!-- Left-to-right gradient so text stays readable -->
+  <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(237,230,216,0.97) 0%, rgba(237,230,216,0.85) 50%, rgba(237,230,216,0.0) 100%);"></div>
+  <!-- Content left-aligned -->
+  <div class="relative z-10 p-md md:p-lg w-full md:w-[52%]">
+    <!-- Headline -->
+    <h2 class="font-display-lg-mobile md:font-display-lg mb-4" style="color:#3D332A; line-height:1.15;">Pure comfort,<br>made to last</h2>
+    <!-- Subtext -->
+    <p class="font-body-lg mb-7 max-w-sm" style="color:#6B5D52;">Every piece is made from 100% organic materials — impossibly soft, gentle on delicate skin, and built to be loved through every wash, every cuddle, every milestone.</p>
+    <!-- CTA Button -->
+    <button onclick="navigateTo('view-shop')" class="px-10 py-3.5 rounded-full font-label-md text-label-md hover:scale-[1.03] transition-transform duration-200 shadow-md" style="background:#C08552; color:#F5F0E6; font-size:16px; letter-spacing:0.04em;">
+      Shop
+    </button>
+  </div>
+</section>
+
+
+
+<style>
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 0.5rem)); } /* -50% shifts by half the width (one full set), minus half the gap */
+}
+.animate-marquee {
+    animation: scroll-marquee 80s linear infinite;
+    display: flex;
+    width: max-content;
+}
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+</style>
+<!-- Product Carousel -->
+<section class="mb-lg">
+    <div class="flex justify-between items-end mb-4 px-2">
+        <h3 class="font-headline-md text-headline-md text-on-surface">Trending Outfits</h3>
+    </div>
+    <div class="relative overflow-hidden w-full">
+        <div id="product-track" class="animate-marquee gap-4 pb-4 px-2">
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.33%20PM.jpeg', 'Ribbed Asymmetrical Crop Tops', '24.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.33 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ribbed Asymmetrical Crop Tops">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Ribbed Asymmetrical Crop Tops</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$24.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%281%29.jpeg', 'Collared Blouse & Shorts Set', '28.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (1).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Collared Blouse & Shorts Set">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Collared Blouse & Shorts Set</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$28.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%2810%29.jpeg', 'Bear Cardigan & Starry Pants', '32.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (10).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Cardigan & Starry Pants">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Bear Cardigan & Starry Pants</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$32.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%282%29.jpeg', 'Bunny Ear Swaddle Wraps', '36.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bunny Ear Swaddle Wraps">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Bunny Ear Swaddle Wraps</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$36.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%283%29.jpeg', 'Strawberry Cardigan & Skirt', '40.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Strawberry Cardigan & Skirt">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Strawberry Cardigan & Skirt</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$40.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%284%29.jpeg', 'Pink Embroidered Blouse Set', '24.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (4).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Pink Embroidered Blouse Set">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Pink Embroidered Blouse Set</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$24.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%285%29.jpeg', 'Red Ribbed Tank & Cherry Pants', '28.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (5).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Red Ribbed Tank & Cherry Pants">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Red Ribbed Tank & Cherry Pants</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$28.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%286%29.jpeg', 'White Floral Lace Layette Set', '32.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Floral Lace Layette Set">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">White Floral Lace Layette Set</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$32.00</p>
+                </div>
+            </a>
+
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.33%20PM.jpeg', 'Ribbed Asymmetrical Crop Tops', '24.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.33 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ribbed Asymmetrical Crop Tops">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Ribbed Asymmetrical Crop Tops</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$24.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%281%29.jpeg', 'Collared Blouse & Shorts Set', '28.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (1).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Collared Blouse & Shorts Set">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Collared Blouse & Shorts Set</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$28.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%2810%29.jpeg', 'Bear Cardigan & Starry Pants', '32.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (10).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Cardigan & Starry Pants">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Bear Cardigan & Starry Pants</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$32.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%282%29.jpeg', 'Bunny Ear Swaddle Wraps', '36.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bunny Ear Swaddle Wraps">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Bunny Ear Swaddle Wraps</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$36.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%283%29.jpeg', 'Strawberry Cardigan & Skirt', '40.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Strawberry Cardigan & Skirt">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Strawberry Cardigan & Skirt</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$40.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%284%29.jpeg', 'Pink Embroidered Blouse Set', '24.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (4).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Pink Embroidered Blouse Set">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Pink Embroidered Blouse Set</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$24.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%285%29.jpeg', 'Red Ribbed Tank & Cherry Pants', '28.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (5).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Red Ribbed Tank & Cherry Pants">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">Red Ribbed Tank & Cherry Pants</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$28.00</p>
+                </div>
+            </a>
+            <!-- Product Card -->
+            <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%286%29.jpeg', 'White Floral Lace Layette Set', '32.00')" class="w-[160px] md:w-[200px] flex-shrink-0 bg-surface rounded-xl border border-[#F2E0DA] overflow-hidden group p-2 block">
+                <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+                    <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Floral Lace Layette Set">
+                </div>
+                <div class="px-2 pb-2">
+                    <h4 class="font-label-md text-label-md text-on-surface truncate">White Floral Lace Layette Set</h4>
+                    <p class="font-body-md text-on-surface-variant mt-1">$32.00</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Shop by Category Section -->
+<section class="mb-lg">
+    <div class="px-2 mb-6">
+        <h3 class="font-headline-md text-headline-md text-on-surface">Shop by Category</h3>
+    </div>
+    
+    <!-- Dresses & Onesies -->
+    <div class="mb-10">
+        <h4 class="font-label-lg text-on-surface-variant mb-4 px-2 uppercase tracking-wider">Dresses & Onesies</h4>
+        <div class="relative w-full aspect-square md:aspect-[2/1] category-slider-container">
+            <div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Floral Pinafore Dress">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Floral Pinafore Dress</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (9).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Embossed Lace Dress">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">White Embossed Lace Dress</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Floral Lace Layette Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">White Floral Lace Layette Set</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.37 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Peach Polka Dot Onesie">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Peach Polka Dot Onesie</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Geometric Onesie">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">White Geometric Onesie</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Paper Boat Striped Onesie">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Paper Boat Striped Onesie</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM (4).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Burgundy Bow-Shoulder Swimsuit">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Burgundy Bow-Shoulder Swimsuit</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Floral Pinafore Dress">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Floral Pinafore Dress</span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sets & Tops -->
+    <div class="mb-10">
+        <h4 class="font-label-lg text-on-surface-variant mb-4 px-2 uppercase tracking-wider">Sets & Tops</h4>
+        <div class="relative w-full aspect-square md:aspect-[2/1] category-slider-container">
+            <div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.33 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ribbed Asymmetrical Crop Tops">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Ribbed Asymmetrical Crop Tops</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (1).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Collared Blouse & Shorts Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Collared Blouse & Shorts Set</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (4).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Pink Embroidered Blouse Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Pink Embroidered Blouse Set</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (5).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Red Ribbed Tank & Cherry Pants">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Red Ribbed Tank & Cherry Pants</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Blue Floral Ruffle Top Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Blue Floral Ruffle Top Set</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Giraffe Ruffle Tee & Shorts Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Giraffe Ruffle Tee & Shorts Set</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (1).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Turtle Graphic Tee Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Turtle Graphic Tee Set</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Outline Tee & Shorts Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Bear Outline Tee & Shorts Set</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Woodland Mushroom Lounge Set">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Woodland Mushroom Lounge Set</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.33 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ribbed Crop Tops">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Ribbed Crop Tops</span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cozy & Warm -->
+    <div class="mb-10">
+        <h4 class="font-label-lg text-on-surface-variant mb-4 px-2 uppercase tracking-wider">Cozy & Warm</h4>
+        <div class="relative w-full aspect-square md:aspect-[2/1] category-slider-container">
+            <div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (10).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Cardigan & Starry Pants">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Bear Cardigan & Starry Pants</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bunny Ear Swaddle Wraps">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Bunny Ear Swaddle Wraps</span>
+                </div>
+            </div>
+            </div><div class="category-slide absolute inset-0 flex gap-4 px-2 opacity-0 transition-opacity duration-700 ease-in-out z-0">
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Strawberry Cardigan & Skirt">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Strawberry Cardigan & Skirt</span>
+                </div>
+            </div>
+            
+            <div class="w-1/2 relative aspect-square rounded-2xl overflow-hidden shadow-sm group">
+                <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (10).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Cardigan & Starry Pants">
+                <div class="absolute inset-0 bg-black/20 flex items-end p-4">
+                    <span class="text-white font-headline-sm shadow-sm">Bear Cardigan & Starry Pants</span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Parents Trust Us Section -->
+<section id="why-us-section" class="mb-lg mx-2 bg-surface rounded-[2.5rem] py-10 px-6 shadow-sm border border-outline-variant">
+    <div class="text-center mb-8">
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Why Parents Trust Us</h3>
+        <p class="font-body-md text-on-surface-variant">Designed with love for your little ones.</p>
+    </div>
+    
+    <div class="flex flex-col gap-6">
+        <!-- Feature 1 -->
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">eco</span>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-on-surface mb-1">Premium & Safe Fabrics</h4>
+                <p class="font-body-sm text-on-surface-variant">Ultra-soft, breathable materials that are perfectly gentle on delicate baby skin.</p>
+            </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-on-surface mb-1">Thoughtful Design</h4>
+                <p class="font-body-sm text-on-surface-variant">Crafted for ultimate comfort, easy diaper changes, and adorable modern style.</p>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 border border-outline-variant">
+                <span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-on-surface mb-1">Fast & Easy Delivery</h4>
+                <p class="font-body-sm text-on-surface-variant">Quick, reliable shipping straight to your door with hassle-free returns.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section id="reviews-section" class="mb-lg mt-12 mx-2 bg-[#E2D8C9] rounded-[2.5rem] py-10 shadow-sm border border-[#D5C9B6]">
+    <div class="px-4 mb-6 flex items-end justify-between">
+        <div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Loved by Parents</h3>
+            <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                <span class="font-label-md text-on-surface-variant ml-2">4.9/5 Average</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrollable Review Cards -->
+    <div id="reviews-container" class="flex overflow-x-auto hide-scrollbar gap-4 px-4 pb-6 snap-x">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const reviewsContainer = document.getElementById('reviews-container');
+            if(reviewsContainer) {
+                setInterval(() => {
+                    if(reviewsContainer.scrollLeft + reviewsContainer.clientWidth >= reviewsContainer.scrollWidth - 10) {
+                        reviewsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        reviewsContainer.scrollBy({ left: 304, behavior: 'smooth' }); 
+                    }
+                }, 2200);
+            }
+        });
+    </script>
+
+        <!-- Review 1 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-secondary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"Absolutely obsessed with the quality! The floral dress is even more beautiful in person. So soft on my daughter's skin."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm border border-outline-variant">S</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Salma A.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 2 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-primary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"The fastest shipping I've ever experienced! The ribbed sets are my new go-to for playdates."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm border border-outline-variant">N</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Noor M.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 3 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-surface-container-highest absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"I've washed the geometric onesie dozens of times and it hasn't faded or shrunk at all. Worth every penny!"</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-headline-sm border border-outline-variant">H</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Haya K.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 4 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-tertiary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"Such beautiful and unique designs. I ordered the woodland lounge set and the fabric is incredibly breathable."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-headline-sm border border-outline-variant">F</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Farah T.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 5 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-secondary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"Finally found a boutique I can trust for my baby boy! The turtle graphic tee is his favorite."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm border border-outline-variant">A</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Aya O.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 6 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-primary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"Excellent customer service and the packaging was so elegant. The lace dress was perfect for my niece's birthday."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm border border-outline-variant">L</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Layan H.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 7 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-surface-container-highest absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"I'm so impressed with the attention to detail. No itchy tags and the stitching is perfect for sensitive skin."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-headline-sm border border-outline-variant">Y</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Yasmeen R.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 8 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-tertiary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"Just gorgeous! The bunny ear swaddle wrap is the softest thing I've ever felt. Highly recommend."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-headline-sm border border-outline-variant">R</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Rasha J.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 9 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-secondary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"The colors are just as vibrant as they look in the pictures! Will definitely be placing another order soon."</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-sm border border-outline-variant">T</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Tala S.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review 10 -->
+        <div class="w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative">
+            <span class="material-symbols-outlined text-primary-container absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <div class="flex gap-1 mb-3 text-primary relative z-10">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">star</span>
+            </div>
+            <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"Love, love, love it! The peach polka dot onesie fits perfectly and looks so adorable. Thank you!"</p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm border border-outline-variant">D</div>
+                <div>
+                    <h4 class="font-label-md text-on-surface">Dana W.</h4>
+                    <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
+
+
+
+<script>
+    // Simple script to shuffle category slides
+    document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll('.category-slider-container');
+        containers.forEach(container => {
+            const slides = container.querySelectorAll('.category-slide');
+            if (slides.length <= 1) return;
+            
+            let currentIndex = 0;
+            setInterval(() => {
+                // fade out current
+                slides[currentIndex].classList.remove('opacity-100', 'z-10');
+                slides[currentIndex].classList.add('opacity-0', 'z-0');
+                
+                // next index
+                currentIndex = (currentIndex + 1) % slides.length;
+                
+                // fade in next
+                slides[currentIndex].classList.remove('opacity-0', 'z-0');
+                slides[currentIndex].classList.add('opacity-100', 'z-10');
+            }, 3500); // static for a few seconds, then shuffle
+        });
+    });
+</script>
+
+
+
+
+
+</main>
+<main id="view-shop" class="pt-xl mt-4 px-4 md:px-gutter max-w-container-max mx-auto" style="display: none;">
+
+<div class="mb-lg text-center mt-6">
+<h2 class="font-headline-lg text-headline-lg mb-xs" style="color:#3D332A;">All Products</h2>
+<p class="font-body-md text-body-md" style="color:#6B5D52;">Discover our complete collection</p>
+</div>
+
+
+
+<!-- Shein-style Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-12" id="shop-grid-container">
+    <!-- Outfit 1 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.33%20PM.jpeg', 'Ribbed Asymmetrical Crop Tops', '24.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.33 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ribbed Asymmetrical Crop Tops">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Ribbed Asymmetrical Crop Tops</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$24.00</p>
+        </div>
+    </a>
+    <!-- Outfit 2 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%281%29.jpeg', 'Collared Blouse & Shorts Set', '28.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (1).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Collared Blouse & Shorts Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Collared Blouse & Shorts Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$28.00</p>
+        </div>
+    </a>
+    <!-- Outfit 3 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%2810%29.jpeg', 'Bear Cardigan & Starry Pants', '32.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (10).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Cardigan & Starry Pants">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Bear Cardigan & Starry Pants</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$32.00</p>
+        </div>
+    </a>
+    <!-- Outfit 4 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%282%29.jpeg', 'Bunny Ear Swaddle Wraps', '36.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bunny Ear Swaddle Wraps">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Bunny Ear Swaddle Wraps</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$36.00</p>
+        </div>
+    </a>
+    <!-- Outfit 5 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%283%29.jpeg', 'Strawberry Cardigan & Skirt', '40.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Strawberry Cardigan & Skirt">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Strawberry Cardigan & Skirt</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$40.00</p>
+        </div>
+    </a>
+    <!-- Outfit 6 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%284%29.jpeg', 'Pink Embroidered Blouse Set', '24.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (4).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Pink Embroidered Blouse Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Pink Embroidered Blouse Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$24.00</p>
+        </div>
+    </a>
+    <!-- Outfit 7 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%285%29.jpeg', 'Red Ribbed Tank & Cherry Pants', '28.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (5).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Red Ribbed Tank & Cherry Pants">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Red Ribbed Tank & Cherry Pants</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$28.00</p>
+        </div>
+    </a>
+    <!-- Outfit 8 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.35%20PM%20%286%29.jpeg', 'White Floral Lace Layette Set', '32.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.35 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Floral Lace Layette Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">White Floral Lace Layette Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$32.00</p>
+        </div>
+    </a>
+    <!-- Outfit 9 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-17%20at%205.34.37%20PM.jpeg', 'Peach Polka Dot Onesie', '36.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-17 at 5.34.37 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Peach Polka Dot Onesie">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Peach Polka Dot Onesie</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$36.00</p>
+        </div>
+    </a>
+    <!-- Outfit 10 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.48%20PM%20%282%29.jpeg', 'White Geometric Onesie', '40.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Geometric Onesie">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">White Geometric Onesie</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$40.00</p>
+        </div>
+    </a>
+    <!-- Outfit 11 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.48%20PM%20%283%29.jpeg', 'Blue Floral Ruffle Top Set', '24.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Blue Floral Ruffle Top Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Blue Floral Ruffle Top Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$24.00</p>
+        </div>
+    </a>
+    <!-- Outfit 12 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.48%20PM%20%284%29.jpeg', 'Burgundy Bow-Shoulder Swimsuit', '28.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM (4).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Burgundy Bow-Shoulder Swimsuit">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Burgundy Bow-Shoulder Swimsuit</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$28.00</p>
+        </div>
+    </a>
+    <!-- Outfit 13 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.48%20PM.jpeg', 'Giraffe Ruffle Tee & Shorts Set', '32.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.48 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Giraffe Ruffle Tee & Shorts Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Giraffe Ruffle Tee & Shorts Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$32.00</p>
+        </div>
+    </a>
+    <!-- Outfit 14 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.49%20PM%20%281%29.jpeg', 'Turtle Graphic Tee Set', '36.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (1).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Turtle Graphic Tee Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Turtle Graphic Tee Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$36.00</p>
+        </div>
+    </a>
+    <!-- Outfit 15 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.49%20PM%20%282%29.jpeg', 'Bear Outline Tee & Shorts Set', '40.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (2).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bear Outline Tee & Shorts Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Bear Outline Tee & Shorts Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$40.00</p>
+        </div>
+    </a>
+    <!-- Outfit 16 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.49%20PM%20%283%29.jpeg', 'Woodland Mushroom Lounge Set', '24.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (3).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Woodland Mushroom Lounge Set">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Woodland Mushroom Lounge Set</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$24.00</p>
+        </div>
+    </a>
+    <!-- Outfit 17 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.49%20PM%20%286%29.jpeg', 'Floral Pinafore Dress', '28.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (6).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Floral Pinafore Dress">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Floral Pinafore Dress</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$28.00</p>
+        </div>
+    </a>
+    <!-- Outfit 18 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.49%20PM%20%289%29.jpeg', 'White Embossed Lace Dress', '32.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM (9).jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="White Embossed Lace Dress">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">White Embossed Lace Dress</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$32.00</p>
+        </div>
+    </a>
+    <!-- Outfit 19 -->
+    <a href="javascript:void(0)" onclick="openProduct('WhatsApp%20Image%202026-06-18%20at%205.55.49%20PM.jpeg', 'Paper Boat Striped Onesie', '36.00')" class="bg-surface rounded-2xl border border-[#F2E0DA] shadow-sm hover:shadow-md transition-shadow group p-2 flex flex-col">
+        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+            <img src="WhatsApp Image 2026-06-18 at 5.55.49 PM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Paper Boat Striped Onesie">
+        </div>
+        <div class="px-2 pb-1 flex flex-col">
+            <h4 class="font-label-md text-on-surface line-clamp-1 mb-1" style="color:#3D332A;">Paper Boat Striped Onesie</h4>
+            <p class="font-body-lg font-medium" style="color:#C08552;">$36.00</p>
+        </div>
+    </a>
+</div>
+
+</div>
+</div>
+
+</main>
+
+<!-- Product Detail View -->
+<main id="view-product" class="pt-24 pb-32 md:pb-12 max-w-7xl mx-auto px-4 w-full relative" style="display: none;">
+    <div class="bg-surface rounded-3xl p-6 md:p-10 shadow-sm border border-[#F2E0DA] flex flex-col md:flex-row gap-8 lg:gap-16 max-w-5xl mx-auto">
+        
+        <!-- Image Gallery (Mobile: 1 column, Desktop: 2 columns grid or just large image) -->
+        <div class="w-full md:w-1/2 flex flex-col gap-4">
+            <div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-3xl overflow-hidden shadow-sm">
+                <img id="product-detail-img" src="" class="w-full h-full object-cover" alt="Product Image">
+                <button class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md text-primary p-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors shadow-sm">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="w-full md:w-1/2 flex flex-col">
+            <h1 id="product-detail-name" class="font-display-md text-on-surface mb-2">Product Name</h1>
+            <p id="product-detail-price" class="font-headline-lg text-primary mb-6">$0.00</p>
+            
+            <p id="product-detail-desc" class="font-body-lg text-on-surface-variant mb-8">
+                Soft, breathable, and designed for ultimate comfort. Perfect for your little one's daily adventures. Features premium stitching and skin-friendly fabric.
+            </p>
+
+            <!-- Features -->
+            <div class="mb-10 bg-surface-container-lowest rounded-2xl p-6 border border-surface-variant">
+                <ul class="flex flex-col gap-4 font-body-md text-on-surface-variant">
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">local_florist</span>
+                        100% Organic Cotton
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">water_drop</span>
+                        Machine Washable
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">child_care</span>
+                        Hypoallergenic & Safe
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Add to Bag CTA (Desktop only here, mobile has floating sticky button) -->
+            <button onclick="addCurrentProduct()" class="w-full py-4 rounded-full bg-primary-container text-on-primary-container font-headline-md text-headline-md hover:scale-[1.02] transition-transform duration-200 shadow-sm flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                Add to Bag
+            </button>
+        </div>
+    </div>
+</main>
+<!-- Footer / Info Section -->
+<footer class="bg-[#D5C6B1] border-t border-[#C3B39D] mt-16 pt-12 pb-24 md:pb-12 px-6 md:px-12 relative z-10 w-full">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24">
+        <!-- Brand & About -->
+        <div class="flex flex-col gap-4 flex-1">
+            <div class="flex items-center gap-3">
+                <img alt="Baby Breeze Logo" class="h-12 w-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWEgxk5VIeVHK0MilQw5I_H6z4Y8R7GH1eXfUvEdmzTYdH-ZuZTWgPMUy8kJgMJnXwqOHhC7pVT217GWc5CbtuBaDDvYFBOsfu1C1Ei2a_cM_AHsnmCQwYHFeunECcSBJnwD4dx0tWhiPTv_7ODozcIs_pCD456UqhzTGgnLZjj5mPNdRORx03OsD5UQEv8XCfFn-I9DMK_PKRrTD4VSE8AIE0xfK_UxiwRDQOJ2c5-uIdwdpUIFC9Mm_103DtvxGsVHlpDyUE0ARY"/>
+                <h2 class="font-display-md text-primary tracking-tight">Baby Breeze</h2>
+            </div>
+            <p class="font-body-md text-on-surface-variant mt-2">Premium, ultra-soft clothing for your little ones. Designed with love, crafted for comfort.</p>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-4 flex-1">
+            <h3 class="font-headline-sm text-on-surface">Get in Touch</h3>
+            <ul class="flex flex-col gap-4 font-body-md text-on-surface-variant">
+                <li class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+                        <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">call</span>
+                    </div>
+                    <a href="tel:+962790000000" class="hover:text-primary transition-colors">+962 79 000 0000</a>
+                </li>
+
+            </ul>
+        </div>
+        
+        <!-- Socials -->
+        <div class="flex flex-col gap-4 flex-1">
+            <h3 class="font-headline-sm text-on-surface">Follow Us</h3>
+            <div class="flex gap-4 mt-1">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/baby_breeze25?igsh=c3lxZmF1b2Z1MGh5" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container hover:scale-110 transition-transform shadow-sm">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/p/18VvQr1vSJ/?mibextid=wwXIfr/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-[#E5DCC9] border border-[#C3B39D] flex items-center justify-center text-[#554A3E] hover:scale-110 transition-transform shadow-sm">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-12 pt-6 border-t border-[#F2E0DA] text-center font-body-sm text-on-surface-variant flex flex-col items-center gap-2">
+        <span>&copy; 2026 Baby Breeze. All rights reserved.</span>
+    </div>
+</footer>
+  <!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-low dark:bg-surface-container-low shadow-sm fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pt-2 pb-safe px-sm border-t border-transparent" style="padding-bottom: env(safe-area-inset-bottom, 16px);">
+<button aria-label="Home" class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-dim text-on-primary-container dark:text-on-primary-fixed rounded-full px-4 py-1 hover:bg-secondary-container/30 transition-colors scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_mini</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<button aria-label="Shop" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">category</span>
+<span class="font-label-sm text-label-sm mt-1">Shop</span>
+</button>
+<button aria-label="Search" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+<span class="font-label-sm text-label-sm mt-1">Search</span>
+</button>
+<button aria-label="Cart" onclick="toggleCart()" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+<span class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full"></span>
+<span class="font-label-sm text-label-sm mt-1">Cart</span>
+</button>
+</nav>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('nav-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+    </script>
+
+<!-- Cart Drawer -->
+<div id="cart-drawer" class="fixed inset-y-0 right-0 z-[70] w-full md:w-[400px] bg-surface shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex justify-between items-center p-6 border-b border-surface-variant">
+        <h2 class="font-headline-md text-primary">Your Cart</h2>
+        <button onclick="toggleCart()" class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="flex-1 p-6 flex flex-col items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-5xl mb-4">shopping_bag</span>
+        <p>Your cart is empty.</p>
+    </div>
+    <div class="p-6 border-t border-surface-variant">
+        <button onclick="openCheckout()" class="w-full py-4 rounded-full bg-primary-container text-on-primary-container font-headline-md hover:scale-[1.02] transition-transform">Checkout</button>
+    </div>
+</div>
+<div id="cart-overlay" class="fixed inset-0 bg-on-background/20 z-[65] hidden opacity-0 transition-opacity" onclick="toggleCart()"></div>
+<script>
+function toggleCart() {
+    const drawer = document.getElementById('cart-drawer');
+    const overlay = document.getElementById('cart-overlay');
+    if (drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.replace('opacity-0', 'opacity-100'), 10);
+    } else {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+    }
+}
+// Stub so the checkout button works even before app.js loads
+function openCheckout() {
+    // Will be overridden by app.js — this is just a safety stub
+    console.warn('openCheckout called before app.js loaded');
+}
+</script>
+
+<!-- Checkout Modal -->
+<div id="checkout-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4">
+    <div class="absolute inset-0 bg-on-background/40 backdrop-blur-sm" onclick="closeCheckout()"></div>
+    <div id="checkout-content" class="bg-surface relative z-10 rounded-3xl w-full max-w-md shadow-2xl p-8 transform scale-95 opacity-0 transition-all duration-300">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="font-headline-md text-primary">Almost there! 🛍️</h2>
+                <p class="font-body-md text-on-surface-variant mt-1">Just a couple of details to place your order.</p>
+            </div>
+            <button onclick="closeCheckout()" class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-4">
+            <div>
+                <label class="font-label-md text-on-surface-variant block mb-2" for="checkout-name">Full Name</label>
+                <input id="checkout-name" type="text" placeholder="e.g. Sarah Johnson" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:border-primary transition-colors" />
+            </div>
+            <div>
+                <label class="font-label-md text-on-surface-variant block mb-2" for="checkout-phone">Phone Number</label>
+                <input id="checkout-phone" type="tel" placeholder="e.g. 079 000 0000" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:border-primary transition-colors" />
+            </div>
+            <div>
+                <label class="font-label-md text-on-surface-variant block mb-2" for="checkout-location">Delivery Address</label>
+                <input id="checkout-location" type="text" placeholder="e.g. Amman, Mecca Street, Bldg 5" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:border-primary transition-colors" />
+            </div>
+            <p id="checkout-error" class="text-error font-label-sm hidden">Please fill in all fields to continue.</p>
+        </div>
+        <button onclick="submitOrder()" class="mt-6 w-full py-4 rounded-full bg-primary text-on-primary font-headline-md hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">check_circle</span>
+            Place Order
+        </button>
+    </div>
+</div>
+
+<!-- Order Success Modal -->
+<div id="success-modal" class="fixed inset-0 z-[110] hidden items-center justify-center px-4">
+    <div class="absolute inset-0 bg-on-background/50 backdrop-blur-sm"></div>
+    <div id="success-content" class="bg-surface relative z-10 rounded-3xl w-full max-w-md shadow-2xl p-8 text-center transform scale-95 opacity-0 transition-all duration-300">
+        <div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center mx-auto mb-6">
+            <span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+        </div>
+        <h2 class="font-headline-lg text-primary mb-2">Order Placed! 🎉</h2>
+        <p id="success-message" class="font-body-lg text-on-surface-variant mb-6">Thank you! We'll be in touch shortly.</p>
+        <button onclick="closeSuccess()" class="w-full py-4 rounded-full bg-primary text-on-primary font-headline-md hover:scale-[1.02] transition-transform">
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/bear3d.js"></script>
+</body></html>
