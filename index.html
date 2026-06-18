@@ -1137,7 +1137,7 @@
                     <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
                         <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">call</span>
                     </div>
-                    <a href="tel:+962790000000" class="hover:text-primary transition-colors">+962 79 000 0000</a>
+                    <a href="tel:0791138375" class="hover:text-primary transition-colors">0791138375</a>
                 </li>
 
             </ul>
@@ -1165,21 +1165,21 @@
 </footer>
   <!-- BottomNavBar (Mobile Only) -->
 <nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-low dark:bg-surface-container-low shadow-sm fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pt-2 pb-safe px-sm border-t border-transparent" style="padding-bottom: env(safe-area-inset-bottom, 16px);">
-<button aria-label="Home" class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-dim text-on-primary-container dark:text-on-primary-fixed rounded-full px-4 py-1 hover:bg-secondary-container/30 transition-colors scale-90 transition-all duration-200">
+<button onclick="navigateTo('view-home'); window.scrollTo({top:0, behavior:'smooth'});" aria-label="Home" class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-dim text-on-primary-container dark:text-on-primary-fixed rounded-full px-4 py-1 hover:bg-secondary-container/30 transition-colors scale-90 transition-all duration-200">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_mini</span>
 <span class="font-label-sm text-label-sm mt-1">Home</span>
 </button>
-<button aria-label="Shop" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors">
+<button onclick="navigateTo('view-shop');" aria-label="Shop" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">category</span>
 <span class="font-label-sm text-label-sm mt-1">Shop</span>
 </button>
-<button aria-label="Search" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors">
+<button onclick="toggleSearchModal()" aria-label="Search" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
 <span class="font-label-sm text-label-sm mt-1">Search</span>
 </button>
 <button aria-label="Cart" onclick="toggleCart()" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:bg-secondary-container/30 transition-colors relative">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
-<span class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full"></span>
+<span class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full hidden"></span>
 <span class="font-label-sm text-label-sm mt-1">Cart</span>
 </button>
 </nav>
@@ -1201,6 +1201,29 @@
     </script>
 
 <!-- Cart Drawer -->
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="fixed inset-0 z-[80] hidden items-start justify-center pt-safe bg-surface/95 backdrop-blur-sm transition-opacity opacity-0 duration-300">
+      <div class="w-full max-w-lg mx-auto bg-surface shadow-md rounded-b-3xl transform -translate-y-full transition-transform duration-300 p-4 pb-6" id="search-modal-content">
+          <div class="flex items-center gap-3">
+              <div class="relative flex-1">
+                  <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+                  <input id="modal-search-input" type="text" placeholder="Search girls, boys, winter..." oninput="performModalSearch(this.value)" class="w-full bg-surface-container-low border border-[#F2E0DA] rounded-full py-4 pl-12 pr-4 text-lg font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-sm">
+              </div>
+              <button onclick="toggleSearchModal()" class="p-3 text-on-surface-variant hover:bg-surface-variant rounded-full shrink-0">
+                  <span class="material-symbols-outlined">close</span>
+              </button>
+          </div>
+          <!-- Quick terms -->
+          <div class="flex flex-wrap gap-2 mt-6 px-2">
+              <button onclick="document.getElementById('modal-search-input').value='girls'; performModalSearch('girls');" class="px-4 py-2 bg-surface-container-low rounded-full text-sm font-label-md text-on-surface-variant border border-outline-variant hover:border-primary">Girls</button>
+              <button onclick="document.getElementById('modal-search-input').value='boys'; performModalSearch('boys');" class="px-4 py-2 bg-surface-container-low rounded-full text-sm font-label-md text-on-surface-variant border border-outline-variant hover:border-primary">Boys</button>
+              <button onclick="document.getElementById('modal-search-input').value='winter'; performModalSearch('winter');" class="px-4 py-2 bg-surface-container-low rounded-full text-sm font-label-md text-on-surface-variant border border-outline-variant hover:border-primary">Winter</button>
+              <button onclick="document.getElementById('modal-search-input').value='sets'; performModalSearch('sets');" class="px-4 py-2 bg-surface-container-low rounded-full text-sm font-label-md text-on-surface-variant border border-outline-variant hover:border-primary">Sets</button>
+          </div>
+      </div>
+  </div>
+
 <div id="cart-drawer" class="fixed inset-y-0 right-0 z-[70] w-full md:w-[400px] bg-surface shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="flex justify-between items-center p-6 border-b border-surface-variant">
         <h2 class="font-headline-md text-primary">Your Cart</h2>

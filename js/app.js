@@ -5,7 +5,6 @@ let selectedSize = 'NB'; // Default size
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
     initSizeSelectors();
-    initCartUI();
     initSizeGuide();
     updateCartUI();
     initProductAutoScroll();
@@ -497,4 +496,42 @@ function performSearch(query) {
     if (query.length === 1) {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
+}
+
+
+function toggleSearchModal() {
+    const modal = document.getElementById('search-modal');
+    const content = document.getElementById('search-modal-content');
+    const input = document.getElementById('modal-search-input');
+    
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.remove('opacity-0');
+        // Small delay for display block to apply before transition
+        setTimeout(() => {
+            content.classList.remove('-translate-y-full');
+            input.focus();
+        }, 10);
+    } else {
+        content.classList.add('-translate-y-full');
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+}
+
+function performModalSearch(query) {
+    // Navigate to shop immediately
+    if (document.getElementById('view-shop').style.display === 'none') {
+        navigateTo('view-shop');
+    }
+    
+    // Close the modal after a short delay so they can see it working
+    setTimeout(() => {
+        toggleSearchModal();
+    }, 400);
+    
+    // Run the main search logic
+    performSearch(query);
 }
