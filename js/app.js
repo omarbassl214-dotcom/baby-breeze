@@ -535,3 +535,116 @@ function performModalSearch(query) {
     // Run the main search logic
     performSearch(query);
 }
+
+
+// --- Review System Logic ---
+let currentRating = 5;
+
+function setRating(stars) {
+    currentRating = stars;
+    const starElements = document.querySelectorAll('#star-rating-selector .star');
+    starElements.forEach((star, index) => {
+        if (index < stars) {
+            star.style.color = '#C08552';
+        } else {
+            star.style.color = '';
+        }
+    });
+}
+// Initialize default rating visually
+setTimeout(() => setRating(5), 500);
+
+async function submitReview() {
+    const name = document.getElementById('reviewer-name').value;
+    const text = document.getElementById('reviewer-text').value;
+    
+    if (!name || !text) {
+        alert("Please fill in your name and review!");
+        return;
+    }
+    
+    if (!window.db) {
+        alert("Database is still connecting, please try again in a second.");
+        return;
+    }
+    
+    const submitBtn = document.querySelector('#review-modal button.bg-primary');
+    submitBtn.innerText = "Submitting...";
+    submitBtn.disabled = true;
+    
+    try {
+        const newReview = { 
+            name: name, 
+            text: text, 
+            rating: currentRating, 
+            createdAt: window.serverTimestamp() 
+        };
+        
+        // Save to Firebase
+        await window.addDoc(window.collection(window.db, "reviews"), newReview);
+        
+        // Render it immediately for this user so it feels fast
+        newReview.date = "Just now";
+        renderNewReview(newReview);
+        
+        // Clean up modal
+        document.getElementById('reviewer-name').value = '';
+        document.getElementById('reviewer-text').value = '';
+        setRating(5);
+        document.getElementById('review-modal').classList.add('hidden');
+        
+        alert("Thank you! Your review is now live for everyone to see.");
+    } catch (e) {
+        console.error("Error adding review: ", e);
+        alert("There was an error saving your review. Please try again.");
+    } finally {
+        submitBtn.innerText = "Submit Review";
+        submitBtn.disabled = false;
+    }
+}
+
+function renderNewReview(review) {
+    const track = document.getElementById('reviews-track');
+    if (!track) return;
+    
+    let starsHtml = '';
+    for(let i=0; i<5; i++) {
+        starsHtml += i < review.rating ? '★' : '☆';
+    }
+    
+    const reviewCard = document.createElement('div');
+    reviewCard.className = 'w-[280px] md:w-[320px] flex-shrink-0 bg-surface rounded-2xl p-6 shadow-sm snap-center border border-[#F2E0DA]';
+    reviewCard.innerHTML = `
+        <div class="flex text-[#C08552] mb-3 text-sm">${starsHtml}</div>
+        <p class="font-body-md text-on-surface-variant mb-4 italic">"${review.text}"</p>
+        <p class="font-label-sm text-primary">— ${review.name} <span class="text-xs text-outline ml-2">${review.date}</span></p>
+    `;
+    
+    // Insert at the beginning of the reviews
+    track.insertBefore(reviewCard, track.firstChild);
+}
+
+// Load Firebase reviews
+window.addEventListener('firebaseReady', async () => {
+    try {
+        const q = window.query(window.collection(window.db, "reviews"), window.orderBy("createdAt", "asc"));
+        const querySnapshot = await window.getDocs(q);
+        
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            let dateStr = "Recently";
+            if (data.createdAt) {
+                const date = data.createdAt.toDate();
+                dateStr = date.toLocaleDateString();
+            }
+            renderNewReview({
+                name: data.name,
+                text: data.text,
+                rating: data.rating,
+                date: dateStr
+            });
+        });
+    } catch (e) {
+        console.log("Error loading reviews from Firebase:", e);
+    }
+});

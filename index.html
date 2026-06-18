@@ -1224,6 +1224,31 @@
       </div>
   </div>
 
+
+  <!-- Leave a Review Modal -->
+  <div id="review-modal" class="fixed inset-0 z-[90] hidden flex items-center justify-center p-4 bg-surface/80 backdrop-blur-sm">
+      <div class="bg-surface w-full max-w-md rounded-2xl shadow-xl p-6 relative">
+          <button onclick="document.getElementById('review-modal').classList.add('hidden')" class="absolute top-4 right-4 text-on-surface-variant hover:text-error">
+              <span class="material-symbols-outlined">close</span>
+          </button>
+          <h3 class="font-headline-sm text-primary mb-4">Write a Review</h3>
+          
+          <input id="reviewer-name" type="text" placeholder="Your Name" class="w-full mb-4 px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low focus:outline-none focus:border-primary">
+          
+          <div class="flex gap-2 mb-4 text-2xl text-outline-variant cursor-pointer" id="star-rating-selector">
+              <span onclick="setRating(1)" class="star hover:text-[#C08552] transition-colors">★</span>
+              <span onclick="setRating(2)" class="star hover:text-[#C08552] transition-colors">★</span>
+              <span onclick="setRating(3)" class="star hover:text-[#C08552] transition-colors">★</span>
+              <span onclick="setRating(4)" class="star hover:text-[#C08552] transition-colors">★</span>
+              <span onclick="setRating(5)" class="star hover:text-[#C08552] transition-colors">★</span>
+          </div>
+          
+          <textarea id="reviewer-text" rows="4" placeholder="How do you like our outfits?" class="w-full mb-6 px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low focus:outline-none focus:border-primary resize-none"></textarea>
+          
+          <button onclick="submitReview()" class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-md hover:bg-primary/90 transition-colors">Submit Review</button>
+      </div>
+  </div>
+
 <div id="cart-drawer" class="fixed inset-y-0 right-0 z-[70] w-full md:w-[400px] bg-surface shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="flex justify-between items-center p-6 border-b border-surface-variant">
         <h2 class="font-headline-md text-primary">Your Cart</h2>
@@ -1311,6 +1336,32 @@ function openCheckout() {
     </div>
 </div>
 
-<script src="js/app.js"></script>
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBlKn99uGscqQlPQm60SG3R1PiqsQv8A6I",
+      authDomain: "baby-breeze.firebaseapp.com",
+      projectId: "baby-breeze",
+      storageBucket: "baby-breeze.firebasestorage.app",
+      messagingSenderId: "971824636287",
+      appId: "1:971824636287:web:5aee3662530071e435ba4a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    window.db = getFirestore(app);
+    window.collection = collection;
+    window.addDoc = addDoc;
+    window.getDocs = getDocs;
+    window.query = query;
+    window.orderBy = orderBy;
+    window.serverTimestamp = serverTimestamp;
+    
+    // Dispatch event to let app.js know Firebase is ready
+    window.dispatchEvent(new Event('firebaseReady'));
+  </script>
+  <script src="js/app.js"></script>
 <script src="js/bear3d.js"></script>
 </body></html>
