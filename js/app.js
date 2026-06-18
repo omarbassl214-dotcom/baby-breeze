@@ -604,7 +604,7 @@ async function submitReview() {
 }
 
 function renderNewReview(review) {
-    const track = document.getElementById('reviews-track');
+    const track = document.getElementById('reviews-container');
     if (!track) return;
     
     let starsHtml = '';
