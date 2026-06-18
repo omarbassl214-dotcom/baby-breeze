@@ -613,11 +613,26 @@ function renderNewReview(review) {
     }
     
     const reviewCard = document.createElement('div');
-    reviewCard.className = 'w-[280px] md:w-[320px] flex-shrink-0 bg-surface rounded-2xl p-6 shadow-sm snap-center border border-[#F2E0DA]';
+    reviewCard.className = 'w-72 flex-shrink-0 bg-surface rounded-[2rem] p-6 shadow-sm border border-outline-variant snap-center relative';
+    
+    // Get first letter of name for the avatar
+    const firstLetter = review.name ? review.name.charAt(0).toUpperCase() : 'U';
+    
+    // Pick a random background color class for the avatar to make them look distinct
+    const colors = ['bg-primary-container text-on-primary-container', 'bg-secondary-container text-on-secondary-container', 'bg-tertiary-container text-on-tertiary-container', 'bg-surface-container-high text-on-surface'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
     reviewCard.innerHTML = `
-        <div class="flex text-[#C08552] mb-3 text-sm">${starsHtml}</div>
-        <p class="font-body-md text-on-surface-variant mb-4 italic">"${review.text}"</p>
-        <p class="font-label-sm text-primary">— ${review.name} <span class="text-xs text-outline ml-2">${review.date}</span></p>
+        <span class="material-symbols-outlined text-surface-container-highest absolute top-4 right-4 text-5xl opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+        <div class="flex gap-1 mb-3 text-primary relative z-10">${starsHtml}</div>
+        <p class="font-body-md text-on-surface-variant mb-6 relative z-10 leading-relaxed">"${review.text}"</p>
+        <div class="flex items-center gap-3 relative z-10">
+            <div class="w-10 h-10 rounded-full ${randomColor} flex items-center justify-center font-headline-sm border border-outline-variant">${firstLetter}</div>
+            <div>
+                <h4 class="font-label-md text-on-surface">${review.name}</h4>
+                <p class="font-body-sm text-on-surface-variant text-xs">Verified Buyer <span class="ml-1 opacity-50">${review.date}</span></p>
+            </div>
+        </div>
     `;
     
     // Insert at the beginning of the reviews
