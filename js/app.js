@@ -84,28 +84,26 @@ async function submitOrder() {
     submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Processing...';
     submitBtn.disabled = true;
 
-    // Build the order list text for the email
-    let orderDetailsHTML = "<h3>Order Summary:</h3><table style='width:100%; border-collapse: collapse;'>";
-    let orderDetailsText = "Items Ordered:\\n";
+    // Build the clean payload for Web3Forms
+    const payload = {
+        access_key: "1e36132c-4b8f-4cb4-9ed1-f76cb406b2c4",
+        subject: `NEW ORDER: $${order.total} from ${name}`,
+        from_name: "Baby Breeze Checkout",
+        "Customer Name": name,
+        "Phone Number": phone,
+        "Delivery Location": location,
+        "Total Price": "$" + order.total
+    };
     
-    cart.forEach(item => {
-        // Build plain text fallback
-        orderDetailsText += `- ${item.quantity}x ${item.name} (Size: ${item.size || 'N/A'}) - $${(item.price * item.quantity).toFixed(2)}\\n`;
-        
-        // Dynamically create an absolute URL for the image based on the live website's actual domain!
+    // Add each item cleanly to the payload
+    cart.forEach((item, index) => {
         const absoluteImageUrl = new URL(item.image, window.location.href).href;
+        const itemTotal = (item.price * item.quantity).toFixed(2);
         
-        // Build HTML table row with image
-        orderDetailsHTML += `
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 10px 0;"><img src="${absoluteImageUrl}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;"></td>
-                <td style="padding: 10px;"><strong>${item.name}</strong><br><span style="color:#666;">Size: ${item.size || 'N/A'}</span></td>
-                <td style="padding: 10px; text-align: right;">${item.quantity}x<br><strong>$${(item.price * item.quantity).toFixed(2)}</strong></td>
-            </tr>
-        `;
+        // Format: Name on top, Link below it, Quantity and Total below the link.
+        // Using standard newlines which Web3Forms converts cleanly.
+        payload[`Item ${index + 1}`] = `${item.name} (Size: ${item.size || 'N/A'})\n${absoluteImageUrl}\nQuantity: ${item.quantity} | Total: $${itemTotal}`;
     });
-    orderDetailsHTML += `</table><h2 style="text-align:right; margin-top: 20px;">Total: $${order.total}</h2>`;
-    orderDetailsText += `\\n========================\\nTotal: $${order.total}`;
 
     try {
         await fetch("https://api.web3forms.com/submit", {
@@ -114,17 +112,7 @@ async function submitOrder() {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({
-                access_key: "1e36132c-4b8f-4cb4-9ed1-f76cb406b2c4",
-                subject: `NEW ORDER: $${order.total} from ${name}`,
-                from_name: "Baby Breeze Checkout",
-                "Customer Name": name,
-                "Phone Number": phone,
-                "Delivery Location": location,
-                "Total Price": "$" + order.total,
-                "Order HTML": orderDetailsHTML,
-                "Order List": orderDetailsText
-            })
+            body: JSON.stringify(payload)
         });
     } catch (error) {
         console.error("Failed to send email", error);
@@ -142,6 +130,13 @@ async function submitOrder() {
 
     // Close checkout, show success
     closeCheckout();
+    
+    // Reset the submit button back to normal so it's not stuck on "Processing..."
+    if (submitBtn && originalBtnHtml) {
+        submitBtn.innerHTML = originalBtnHtml;
+        submitBtn.disabled = false;
+    }
+    
     setTimeout(() => openSuccess(name), 350);
 }
 
@@ -167,7 +162,8 @@ function closeSuccess() {
     setTimeout(() => {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-        navigateTo('view-home');
+        // Refresh the entire website to reset to the home screen
+        window.location.reload();
     }, 300);
 }
 // ──────────────────────────────────────────────────────────────
