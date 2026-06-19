@@ -54,7 +54,7 @@ function closeCheckout() {
     }, 300);
 }
 
-function submitOrder() {
+async function submitOrder() {
     const name = document.getElementById('checkout-name').value.trim();
     const phone = document.getElementById('checkout-phone').value.trim();
     const location = document.getElementById('checkout-location').value.trim();
@@ -75,6 +75,58 @@ function submitOrder() {
         total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2),
         date: new Date().toLocaleString()
     };
+    
+    // ----------------------------------------------------
+    // BACKGROUND WEB3FORMS ORDER EMAIL
+    // ----------------------------------------------------
+    const submitBtn = event.currentTarget || document.querySelector('#checkout-content button');
+    const originalBtnHtml = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Processing...';
+    submitBtn.disabled = true;
+
+    // Build the order list text for the email
+    let orderDetailsHTML = "<h3>Order Summary:</h3><table style='width:100%; border-collapse: collapse;'>";
+    let orderDetailsText = "Items Ordered:\\n";
+    
+    cart.forEach(item => {
+        // Build plain text fallback
+        orderDetailsText += `- ${item.quantity}x ${item.name} (Size: ${item.size || 'N/A'}) - $${(item.price * item.quantity).toFixed(2)}\\n`;
+        // Build HTML table row with image
+        orderDetailsHTML += `
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 0;"><img src="https://raw.githubusercontent.com/username/repo/main/${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;"></td>
+                <td style="padding: 10px;"><strong>${item.name}</strong><br><span style="color:#666;">Size: ${item.size || 'N/A'}</span></td>
+                <td style="padding: 10px; text-align: right;">${item.quantity}x<br><strong>$${(item.price * item.quantity).toFixed(2)}</strong></td>
+            </tr>
+        `;
+    });
+    orderDetailsHTML += `</table><h2 style="text-align:right; margin-top: 20px;">Total: $${order.total}</h2>`;
+    orderDetailsText += `\\n========================\\nTotal: $${order.total}`;
+
+    try {
+        await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                access_key: "1e36132c-4b8f-4cb4-9ed1-f76cb406b2c4",
+                subject: `NEW ORDER: $${order.total} from ${name}`,
+                from_name: "Baby Breeze Checkout",
+                "Customer Name": name,
+                "Phone Number": phone,
+                "Delivery Location": location,
+                "Total Price": "$" + order.total,
+                "Order HTML": orderDetailsHTML,
+                "Order List": orderDetailsText
+            })
+        });
+    } catch (error) {
+        console.error("Failed to send email", error);
+    }
+    // ----------------------------------------------------
+
     const orders = JSON.parse(localStorage.getItem('babyBreezeOrders') || '[]');
     orders.push(order);
     localStorage.setItem('babyBreezeOrders', JSON.stringify(orders));
