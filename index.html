@@ -1161,6 +1161,24 @@
                 </a>
             </div>
         </div>
+
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-4 flex-1">
+            <h3 class="font-headline-sm text-on-surface">Newsletter</h3>
+            <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-2">
+                <input type="hidden" name="access_key" value="1e36132c-4b8f-4cb4-9ed1-f76cb406b2c4">
+                <input type="hidden" name="subject" value="New Newsletter Subscription (Baby Breeze)">
+                <!-- Optionally redirect after submit so it doesn't leave your site entirely -->
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <div class="relative">
+                    <input type="email" name="email" required placeholder="Enter your email" class="w-full bg-surface/60 border border-[#C3B39D] rounded-full py-3 pl-4 pr-12 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 placeholder:text-on-surface-variant">
+                    <button type="submit" class="absolute right-1 top-1 bottom-1 bg-primary text-on-primary rounded-full w-10 flex items-center justify-center hover:bg-primary/90 transition-colors">
+                        <span class="material-symbols-outlined" style="font-size: 20px;">send</span>
+                    </button>
+                </div>
+                <p class="font-body-sm text-on-surface-variant text-xs ml-2 mt-1">Get 10% off your first order!</p>
+            </form>
+        </div>
     </div>
     
     <div class="mt-12 pt-6 border-t border-[#F2E0DA] text-center font-body-sm text-on-surface-variant flex flex-col items-center gap-2">
