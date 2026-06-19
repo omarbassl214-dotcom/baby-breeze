@@ -91,10 +91,14 @@ async function submitOrder() {
     cart.forEach(item => {
         // Build plain text fallback
         orderDetailsText += `- ${item.quantity}x ${item.name} (Size: ${item.size || 'N/A'}) - $${(item.price * item.quantity).toFixed(2)}\\n`;
+        
+        // Dynamically create an absolute URL for the image based on the live website's actual domain!
+        const absoluteImageUrl = new URL(item.image, window.location.href).href;
+        
         // Build HTML table row with image
         orderDetailsHTML += `
             <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 10px 0;"><img src="https://raw.githubusercontent.com/username/repo/main/${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;"></td>
+                <td style="padding: 10px 0;"><img src="${absoluteImageUrl}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;"></td>
                 <td style="padding: 10px;"><strong>${item.name}</strong><br><span style="color:#666;">Size: ${item.size || 'N/A'}</span></td>
                 <td style="padding: 10px; text-align: right;">${item.quantity}x<br><strong>$${(item.price * item.quantity).toFixed(2)}</strong></td>
             </tr>
